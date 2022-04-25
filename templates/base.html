@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head class="h-full bg-gray-100">
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+        <script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous" defer></script>
+
+        <title>{% block title %}{% endblock %} - OpenResearch</title>
+    {% endblock %}
+</head>
+<body class="h-full">
+{% block content %}{% endblock %}
+
+
+<div id="footer">
+    {% block footer %}
+        &copy; Copyright 2010 by <a href="http://domain.invalid/">you</a>.
+    {% endblock %}
+</div>
+</body>
+</html>
