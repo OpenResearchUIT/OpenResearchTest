@@ -1,0 +1,67 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+
+<nav class="h-full overflow-y-auto" aria-label="Directory">
+    <div class="relative">
+
+        <ul role="list" class="relative z-0 divide-y divide-gray-200">
+            {% for data in meta %}
+                <li class="bg-white">
+                    <div class="relative px-6 py-5 flex items-center space-x-3 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full"
+                                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                 alt="">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <a href="#" class="focus:outline-none">
+                                <!-- Extend touch target to entire panel -->
+                                <span class="absolute inset-0" aria-hidden="true"></span>
+                                <p class="text-sm font-medium text-gray-900">{{ data.Title }}</p>
+                                <p class="text-sm text-gray-500 truncate">Co-Founder / CEO</p>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+
+
+        </ul>
+    <ul role="list" class="divide-y divide-gray-200">
+  <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+    <div class="flex justify-between space-x-3">
+      <div class="min-w-0 flex-1">
+        <a href="#" class="block focus:outline-none">
+          <span class="absolute inset-0" aria-hidden="true"></span>
+          <p class="text-sm font-medium text-gray-900 truncate">Gloria Roberston</p>
+          <p class="text-sm text-gray-500 truncate">Velit placeat sit ducimus non sed</p>
+        </a>
+      </div>
+      <time datetime="2021-01-27T16:35" class="flex-shrink-0 whitespace-nowrap text-sm text-gray-500">1d ago</time>
+    </div>
+    <div class="mt-1">
+      <p class="line-clamp-2 text-sm text-gray-600">Doloremque dolorem maiores assumenda dolorem facilis. Velit vel in a rerum natus facere. Enim rerum eaque qui facilis. Numquam laudantium sed id dolores omnis in. Eos reiciendis deserunt maiores et accusamus quod dolor.</p>
+    </div>
+  </li>
+
+  <!-- More messages... -->
+        <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+    <div class="flex justify-between space-x-3">
+      <div class="min-w-0 flex-1">
+        <a href="#" class="block focus:outline-none">
+          <span class="absolute inset-0" aria-hidden="true"></span>
+          <p class="text-sm font-medium text-gray-900 truncate">Gloria Roberston</p>
+          <p class="text-sm text-gray-500 truncate">Velit placeat sit ducimus non sed</p>
+        </a>
+      </div>
+      <time datetime="2021-01-27T16:35" class="flex-shrink-0 whitespace-nowrap text-sm text-gray-500">1d ago</time>
+    </div>
+    <div class="mt-1">
+      <p class="line-clamp-2 text-sm text-gray-600">Doloremque dolorem maiores assumenda dolorem facilis. Velit vel in a rerum natus facere. Enim rerum eaque qui facilis. Numquam laudantium sed id dolores omnis in. Eos reiciendis deserunt maiores et accusamus quod dolor.</p>
+    </div>
+  </li>
+</ul>
+
+    </div>
+
+
+</nav>
