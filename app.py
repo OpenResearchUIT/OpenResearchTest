@@ -17,10 +17,11 @@ def index():  # put application's code here
 
 @app.route('/archive')
 def archive():  # put application's code here
+    meta = fetchFiletableData()
     catalogs = fetchAllCatalogs()
     tagCategories = fetchAllTagCatergories()
 
-    return render_template('archive.html',catalogs=catalogs, tagCategories=tagCategories)
+    return render_template('archive.html', meta=meta, catalogs=catalogs, tagCategories=tagCategories)
 
 
 if __name__ == '__main__':
