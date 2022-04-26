@@ -16,21 +16,28 @@
             <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
                 <div class="hidden lg:block lg:col-span-3 xl:col-span-2">
 
-                    {% include 'pages/frontpage/layout/sidebar.html' %}
+                    <nav aria-label="Sidebar" class="sticky top-4 divide-y divide-gray-300">
+
+                        {% include 'components/sidebar/main-choices-section.html' %}
+
+                        {% include 'components/sidebar/expandable-catalog-section.html' %}
+
+
+                    </nav>
 
                 </div>
                 <main class="lg:col-span-9 xl:col-span-6">
                     <!-- Middle content -->
-                    {% for i in range(10) %}
-                    {% include 'pages/frontpage/layout/content-card.html' %}
+                    {% for data in meta %}
+                        {% include 'pages/frontpage/layout/content-card.html' %}
                     {% endfor %}
 
                 </main>
 
                 <aside class="hidden xl:block xl:col-span-4">
                     <div class="sticky top-6 space-y-4">
-                        {% include 'components/top-users.html' %}
-                        {% include 'components/trending topics.html' %}
+                        {% include 'components/cards/top-users.html' %}
+                        {% include 'components/cards/trending topics.html' %}
                     </div>
                 </aside>
             </div>

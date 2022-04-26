@@ -5,7 +5,8 @@
 
     -->
 
-<header x-data="{ mobileMenuOpen: false }" :class="{ 'fixed inset-0 z-40 overflow-y-auto': mobileMenuOpen }" class="bg-white shadow-sm lg:static lg:overflow-y-visible ">
+<header x-data="{ mobileMenuOpen: false }" :class="{ 'fixed inset-0 z-40 overflow-y-auto': mobileMenuOpen }"
+        class="bg-white shadow-sm lg:static lg:overflow-y-visible ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8">
             <div class="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
@@ -52,7 +53,7 @@
                       Menu open: "hidden", Menu closed: "block"
                     -->
                     <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor" aria-hidden="true" >
+                         stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -96,7 +97,8 @@
     <nav :class="mobileMenuOpen ? '' : 'hidden'" class="lg:hidden" aria-label="Global">
         <div class="max-w-3xl mx-auto px-2 pt-2 pb-3 space-y-1 sm:px-4">
             <!-- Current: "bg-gray-100 text-gray-900", Default: "hover:bg-gray-50" -->
-            {% include 'pages/frontpage/layout/sidebar.html' %}
+            {% include 'components/sidebar/main-choices-section.html' %}
+            {% include 'components/sidebar/expandable-catalog-section.html' %}
         </div>
         <div class="border-t border-gray-200 pt-4 pb-3">
             <div class="max-w-3xl mx-auto px-4 flex items-center sm:px-6">
