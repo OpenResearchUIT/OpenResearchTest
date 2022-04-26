@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Frontpage{% endblock %}
+{% block title %}Archive{% endblock %}
 {% block head %}
     {{ super() }}
     <style type="text/css">
@@ -18,7 +18,7 @@
       <body class="h-full overflow-hidden">
       ```
     -->
-    <div class="min-h-screen h-full flex">
+    <div x-data="{ mobileMenuOpen: false }" class="min-h-screen h-full flex">
 
        {% include 'components/sidebar/offcanvas-mobile-menu.html' %}
 
@@ -50,32 +50,34 @@
                         <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                              alt="Workflow">
                     </div>
+                    <!-- Mobile menu button -->
                     <div>
-                        <button type="button"
-                                class="-mr-3 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900">
-                            <span class="sr-only">Open sidebar</span>
-                            <!-- Heroicon name: outline/menu -->
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M4 6h16M4 12h16M4 18h16"/>
-                            </svg>
-                        </button>
+                        {% include 'components/buttons/offcanvas-mobile-menu-toggle.html' %}
                     </div>
                 </div>
             </div>
             <div class="flex-1 relative z-0 flex overflow-hidden">
-                <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last">
+                <!-- TableView-->
+                <main class=" flex-1 relative z-0 overflow-hidden ">
                     <!-- Start main area-->
-                    <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
-                        <div class="h-full border-2 border-gray-200 border-dashed rounded-lg"></div>
+                    <div class="absolute inset-0 ">
+
+                        <div class="h-full">
+                            {% include 'components/input/search-hotkey.html' %}
+                            {% include 'components/stacked-list.html' %}
+                        </div>
+
                     </div>
                     <!-- End main area -->
                 </main>
-                <aside class="hidden relative xl:order-first xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200 overflow-y-auto">
+                <!-- Desktop Preview-->
+                <aside class="hidden relative lg:flex lg:flex-col flex-shrink-0 w-2/3 border-r border-gray-200 overflow-y-auto">
                     <!-- Start secondary column (hidden on smaller screens) -->
                     <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
-                        <div class="h-full border-2 border-gray-200 border-dashed rounded-lg"></div>
+
+                        <div class="h-full border-2 border-gray-200 border-dashed rounded-lg">
+                            <p>View</p>
+                        </div>
                     </div>
                     <!-- End secondary column -->
                 </aside>

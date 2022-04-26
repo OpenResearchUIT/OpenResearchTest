@@ -9,8 +9,9 @@
     </style>
 {% endblock %}
 {% block content %}
-    <div class="min-h-screen bg-gray-100">
+    <div x-data="{ mobileMenuOpen: false }" class="min-h-screen bg-gray-100">
         {% include 'pages/frontpage/layout/navbar.html' %}
+        {% include 'components/sidebar/offcanvas-mobile-menu.html' %}
 
         <div class="py-6">
             <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
